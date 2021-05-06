@@ -1,4 +1,4 @@
-import _, { extend } from 'lodash';
+import _ from 'lodash';
 import Student from '../models/student.model';
 
 const create = (req, res) => {
