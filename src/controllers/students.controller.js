@@ -3,18 +3,18 @@ import Student from '../models/student.model';
 
 const create = (req, res) => {
     const student = Student(req.body);
-    student.save((err, data => {
+    student.save((err, data) => {
         if (err) {
-            res.status(400).json(err.message);
+            return res.status(400).json(err.message);
         }
         res.status(201).json(data);
-    }));
+    });
 }
 
 const list = (req, res) => {
     Student.find((err, data) => {
         if (err) {
-            res.status(400).json(err.message);
+            return res.status(400).json(err.message);
         }
         res.status(200).json(data);
     });
