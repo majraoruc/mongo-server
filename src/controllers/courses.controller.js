@@ -3,12 +3,12 @@ import Course from '../models/course.model';
 
 const create = (req, res) => {
     const course = Course(req.body);
-    course.save((err, data => {
+    course.save((err, data) => {
         if (err) {
             res.status(400).json(err.message);
         }
         res.status(201).json(data);
-    }));
+    });
 }
 
 const list = (req, res) => {
@@ -37,12 +37,12 @@ const update = (req, res) => {
             res.status(400).json('Course not found!');
         }
         const course = _.extend(data, req.body);
-        course.save((err, data => {
+        course.save((err, data) => {
             if (err) {
                 res.status(400).json(err.message);
             }
             res.status(200).json(data);
-        }))
+        })
     });
 }
 

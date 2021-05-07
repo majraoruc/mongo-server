@@ -37,12 +37,12 @@ const update = (req, res) => {
             res.status(400).json('Student not found!');
         }
         const student = _.extend(data, req.body);
-        student.save((err, data => {
+        student.save((err, data) => {
             if (err) {
                 res.status(400).json(err.message);
             }
             res.status(200).json(data);
-        }))
+        })
     });
 }
 
